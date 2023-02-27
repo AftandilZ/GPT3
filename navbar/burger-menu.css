@@ -1,0 +1,71 @@
+/* ? ================================================================================================ */
+
+.hamb {
+  /* right: 1.5%; */
+  /* position: fixed; */
+  /* margin-top: 5px; */
+  /* margin: 0 2% 0 0; */
+  display: flex;
+  align-items: center;
+  display: none;
+}
+.hamb_field {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  transition: 0.2s;
+  height: 36px;
+}
+.hamb_field:hover {
+  transform: scale(1.2);
+  box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.461);
+}
+.bar {
+  display: block;
+  margin: 6px auto;
+  background-color: rgb(0, 0, 0);
+  transition: 0.2s;
+  width: 30px;
+  height: 3px;
+}
+
+.popup {
+  position: fixed;
+  /* padding: 0 0 0 5%; */
+  left: 100%;
+
+  z-index: 100;
+  transition: 0.5s;
+  display: none;
+  width: 100%;
+}
+.popup.open {
+  left: -8%;
+}
+
+.hamb_field.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamb_field.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamb_field.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+body.noscroll {
+  overflow: hidden;
+}
+
+/* ?========================================= */
+
+@media all and (max-width: 1050px) {
+  .hamb {
+    display: block;
+    display: flex;
+  }
+  .popup {
+    /* width: 100%; */
+    display: flex;
+    justify-content: flex-end;
+  }
+}
